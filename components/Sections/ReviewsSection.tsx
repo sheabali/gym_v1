@@ -12,11 +12,7 @@ export default function ReviewsSection() {
   const { language, t } = useLanguage();
 
   return (
-<<<<<<< HEAD
-    <section id="reviews" className="py-24 px-4 sm:px-6 lg:px-8 border-b border-white/[0.06] bg-slate-50 dark:bg-[#0c0c0f]">
-=======
     <section id="reviews" className="py-28 px-4 sm:px-6 lg:px-8 border-b border-white/[0.06] bg-[#0c0c0f]">
->>>>>>> 23520c35639d1c633a8bd1adba2b49170f746c86
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-white/[0.08]">
@@ -46,11 +42,7 @@ export default function ReviewsSection() {
 
             <MagneticButton
               onClick={() => window.open(BUSINESS_INFO.googleMapsDirectionsUrl, "_blank")}
-<<<<<<< HEAD
-              className="px-4 py-2.5 bg-[#22c55e] hover:bg-[#16a34a] !text-black font-bold text-xs rounded-sm transition-all flex items-center gap-1.5 shadow-md shadow-[#22c55e]/20"
-=======
               className="px-4 py-2.5 bg-[#22c55e] hover:bg-[#16a34a] !text-black font-black text-xs font-mono uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-[#22c55e]/20 rounded-xs cursor-pointer"
->>>>>>> 23520c35639d1c633a8bd1adba2b49170f746c86
             >
               <span className="!text-black font-black">{language === "bn" ? "গুগলে দেখুন" : "VIEW ON GOOGLE"}</span>
               <ArrowUpRight className="w-3.5 h-3.5 !text-black stroke-[2.5]" />

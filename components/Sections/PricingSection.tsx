@@ -287,28 +287,7 @@ export default function PricingSection() {
                         </MagneticButton>
                       </div>
                     </div>
-<<<<<<< HEAD
-
-                    {/* Select / Subscribe CTA */}
-                    <div className="pt-2 mt-auto">
-                      <MagneticButton
-                        onClick={() => handleSelectPlan(plan.rawId, plan.nameEn, plan.pricePaisa, plan.durationDays)}
-                        className={`w-full py-3 text-xs font-bold rounded-sm transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-md ${
-                          isPopular
-                            ? "bg-[#22c55e] !text-black hover:bg-[#16a34a] shadow-[#22c55e]/25"
-                            : "bg-white/[0.04] border border-white/[0.1] text-zinc-200 hover:bg-[#22c55e] hover:!text-black hover:border-[#22c55e]"
-                        }`}
-                      >
-                        <span className={isPopular ? "!text-black" : ""}>
-                          {token && plan.pricePaisa ? (language === "bn" ? "সাবস্ক্রাইব করুন" : "Subscribe Now") : t.pricing.selectPlan}
-                        </span>
-                        <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
-                      </MagneticButton>
-                    </div>
-                  </div>
-=======
                   </CardSpotlight>
->>>>>>> 23520c35639d1c633a8bd1adba2b49170f746c86
                 </motion.div>
               );
             })}
