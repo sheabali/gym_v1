@@ -138,19 +138,19 @@ export default function PricingSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-white/[0.08]">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-[#22c55e] mb-3">
+            <div className="mono-label text-[#22c55e] mb-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
-              <span>Membership Plans</span>
+              <span>05 • OFFICIAL RATE CARD & MEMBERSHIP PACKAGES</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
               {language === "bn" ? "অফিশিয়াল মেম্বারশিপ প্যাকেজ" : "Official Packages & Pricing"}
             </h2>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="text-xs text-[#22c55e] font-semibold">
-              Transparent Pricing • No Hidden Fees
+            <span className="text-xs font-mono text-[#22c55e] uppercase tracking-wider font-bold">
+              EST. 2015 • ALL-INCLUSIVE RATES
             </span>
-            <p className="text-sm text-zinc-400 max-w-md font-normal leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-400 max-w-md font-normal leading-relaxed">
               {language === "bn"
                 ? "কোনো গোপন চার্জ নেই। ভর্তি ফি, মেয়াদের ফি এবং এককালীন বিশেষ ডিসকাউন্টসহ স্বচ্ছ হিসাব।"
                 : "Exact official rates from our front desk. Includes admission fee, duration dues, and instant cash discounts."}
@@ -164,14 +164,14 @@ export default function PricingSection() {
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="border border-white/[0.08] bg-[#0e0e12] rounded-2xl h-96 p-6 animate-pulse flex flex-col justify-between"
+                className="border border-white/[0.08] bg-[#0e0e12] rounded-xs h-96 p-6 animate-pulse flex flex-col justify-between"
               >
                 <div className="space-y-4">
-                  <div className="h-6 bg-white/[0.05] rounded-xl w-3/4" />
-                  <div className="h-4 bg-white/[0.03] rounded-xl w-1/2" />
-                  <div className="h-10 bg-white/[0.05] rounded-xl mt-6" />
+                  <div className="h-6 bg-white/[0.05] rounded-xs w-3/4" />
+                  <div className="h-4 bg-white/[0.03] rounded-xs w-1/2" />
+                  <div className="h-10 bg-white/[0.05] rounded-xs mt-6" />
                 </div>
-                <div className="h-10 bg-white/[0.05] rounded-xl w-full" />
+                <div className="h-10 bg-white/[0.05] rounded-xs w-full" />
               </div>
             ))}
           </div>
@@ -194,73 +194,100 @@ export default function PricingSection() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: idx * 0.08 }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
                   className="h-full"
                 >
-                  <div
-                    className={`h-full flex flex-col justify-between transition-all duration-300 relative rounded-2xl p-6 sm:p-7 bg-[#0e0e12] border hover:-translate-y-1 shadow-xl ${
-                      isPopular
-                        ? "border-[#22c55e]/60 ring-1 ring-[#22c55e]/30 shadow-2xl shadow-[#22c55e]/10"
-                        : "border-white/[0.08] hover:border-white/[0.2]"
-                    }`}
+                  <CardSpotlight
+                    enableTilt={true}
+                    showReticles={true}
+                    spotlightColor="rgba(34, 197, 94, 0.18)"
+                    className={`h-full flex flex-col justify-between transition-all duration-300 relative rounded-xs ${isPopular
+                      ? "border-[#22c55e] shadow-2xl shadow-[#22c55e]/20 lg:scale-[1.02] ring-1 ring-[#22c55e]/50"
+                      : "border-white/[0.1] hover:border-white/30"
+                      }`}
                   >
-                    <div>
-                      {/* Top Plan Header & Badge */}
-                      <div className="flex items-center justify-between gap-2 mb-4">
-                        <h3 className="text-lg font-bold text-white">
-                          {name}
-                        </h3>
-                        {badge && (
-                          <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${
-                            isPopular
-                              ? "bg-[#22c55e] text-black"
-                              : "bg-white/[0.06] text-zinc-300 border border-white/[0.08]"
-                          }`}>
-                            {badge}
+                    <div className="flex flex-col justify-between h-full">
+                      <div>
+                        {/* Rate Card Green Header Bar */}
+                        <div className="bg-[#22c55e] px-4 py-2.5 flex items-center justify-between">
+                          <span className="!text-black font-black text-xs sm:text-sm tracking-wider uppercase">
+                            {name}
                           </span>
-                        )}
-                      </div>
-
-                      {/* Main Price */}
-                      <div className="mb-5">
-                        <div className="flex items-baseline gap-1">
-                          <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                            ৳{plan.price.toLocaleString("en-US")}
-                          </span>
-                          <span className="text-xs text-zinc-400 font-medium">/{period}</span>
-                        </div>
-
-                        {/* Itemized Rate Breakdown */}
-                        <div className="mt-4 pt-4 border-t border-white/[0.06] text-xs text-zinc-400 space-y-1.5">
-                          <div className="flex items-center justify-between">
-                            <span>{language === "bn" ? "ভর্তি ফি" : "Admission Fee"}</span>
-                            <span className="text-zinc-200 font-medium">{admission} TK</span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span>{language === "bn" ? "প্যাকেজ ফি" : "Package Fee"}</span>
-                            <span className="text-zinc-200 font-medium">{durationFee} TK</span>
-                          </div>
-                          {discount !== "0" && (
-                            <div className="flex items-center justify-between text-[#22c55e] font-semibold">
-                              <span>{language === "bn" ? "ডিসকাউন্ট" : "Instant Savings"}</span>
-                              <span>-{discount} TK</span>
-                            </div>
+                          {badge && (
+                            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs bg-black text-[#22c55e] uppercase">
+                              {badge}
+                            </span>
                           )}
                         </div>
+
+                        <div className="p-6">
+                          {/* Itemized Rate Table */}
+                          <div className="space-y-2.5 pb-5 mb-5 border-b border-white/[0.08] font-mono text-xs">
+                            <div className="flex items-center justify-between text-zinc-400">
+                              <span>{language === "bn" ? "ভর্তি ফি" : "ADMISSION FEE"}</span>
+                              <span className="text-white font-bold">{admission} TK.</span>
+                            </div>
+
+                            <div className="flex items-center justify-between text-zinc-400">
+                              <span>{language === "bn" ? "প্যাকেজ ফি" : "PACKAGE FEE"}</span>
+                              <span className="text-white font-bold">{durationFee} TK.</span>
+                            </div>
+
+                            <div className="flex items-center justify-between text-zinc-400 pt-1 border-t border-white/[0.04]">
+                              <span>{language === "bn" ? "সাব টোটাল" : "SUB TOTAL"}</span>
+                              <span className="text-white font-bold">{subTotal} TK.</span>
+                            </div>
+
+                            <div className="flex items-center justify-between text-[#22c55e] font-bold">
+                              <span>{language === "bn" ? "ডিসকাউন্ট" : "DISCOUNT"}</span>
+                              <span>-{discount} TK.</span>
+                            </div>
+                          </div>
+
+                          {/* Grand Total Price Block */}
+                          <div className="mb-6 p-4 rounded-xs bg-black/60 border border-white/[0.08] shadow-inner">
+                            <span className="text-[10px] mono-label text-zinc-400 block mb-1">
+                              {language === "bn" ? "সর্বমোট প্রদেয়" : "GRAND TOTAL"}
+                            </span>
+                            <div className="flex items-baseline gap-1.5">
+                              <span className="text-3xl sm:text-4xl font-black text-[#22c55e] tracking-tight font-mono">
+                                ৳{plan.price.toLocaleString("en-US")}
+                              </span>
+                            </div>
+                            <span className="text-[11px] mono-label text-zinc-400 block mt-1">
+                              {period}
+                            </span>
+                          </div>
+
+                          {/* Features List */}
+                          <ul className="space-y-2.5 mb-6 text-xs text-zinc-300 font-sans">
+                            {features.map((feature: any, i: number) => (
+                              <li key={i} className="flex items-start gap-2.5 leading-snug">
+                                <Check className="w-3.5 h-3.5 text-[#22c55e] shrink-0 mt-0.5" />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
 
-                      {/* Features List */}
-                      <div className="mb-6 pt-4 border-t border-white/[0.06]">
-                        <ul className="space-y-2.5 text-xs text-zinc-300">
-                          {features.map((feature: any, i: number) => (
-                            <li key={i} className="flex items-start gap-2.5 leading-snug">
-                              <Check className="w-3.5 h-3.5 text-[#22c55e] shrink-0 mt-0.5 stroke-[2.5]" />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      {/* Select / Subscribe Magnetic Button */}
+                      <div className="p-6 pt-0 mt-auto">
+                        <MagneticButton
+                          onClick={() => handleSelectPlan(plan.rawId, plan.nameEn, plan.pricePaisa, plan.durationDays)}
+                          className={`w-full py-3.5 text-xs uppercase tracking-wider font-bold transition-all cursor-pointer flex items-center justify-center gap-2 rounded-xs shadow-md ${isPopular
+                            ? "bg-[#22c55e] !text-black hover:bg-[#16a34a] shadow-[#22c55e]/25 font-black"
+                            : "bg-white/[0.03] border border-white/[0.12] text-white hover:bg-[#22c55e] hover:!text-black hover:border-[#22c55e]"
+                            }`}
+                        >
+                          <span className={isPopular ? "!text-black font-black" : "text-white group-hover:!text-black font-bold"}>
+                            {token && plan.pricePaisa ? (language === "bn" ? "সাবস্ক্রাইব করুন" : "Subscribe Now") : t.pricing.selectPlan}
+                          </span>
+                          <ArrowUpRight className={`w-4 h-4 ${isPopular ? "!text-black stroke-[2.5]" : "text-white group-hover:!text-black stroke-[2]"}`} />
+                        </MagneticButton>
                       </div>
                     </div>
+<<<<<<< HEAD
 
                     {/* Select / Subscribe CTA */}
                     <div className="pt-2 mt-auto">
@@ -279,6 +306,9 @@ export default function PricingSection() {
                       </MagneticButton>
                     </div>
                   </div>
+=======
+                  </CardSpotlight>
+>>>>>>> 23520c35639d1c633a8bd1adba2b49170f746c86
                 </motion.div>
               );
             })}
@@ -286,17 +316,17 @@ export default function PricingSection() {
         )}
 
         {/* 3-Branch Network Directory */}
-        <div className="border border-white/[0.08] p-6 sm:p-8 bg-[#0e0e12] space-y-6 rounded-2xl shadow-xl">
+        <div className="border border-white/[0.08] p-6 sm:p-8 bg-[#0e0e12] space-y-6 rounded-xs shadow-xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.06]">
             <div>
-              <span className="text-xs text-[#22c55e] font-semibold block mb-1">
-                Platinum Gym Network • 3 Official Branches
+              <span className="mono-label text-[10px] text-[#22c55e] block mb-1">
+                PLATINUM GYM NETWORK • 3 OFFICIAL BRANCHES
               </span>
-              <h4 className="text-xl font-bold text-white tracking-tight">
+              <h4 className="text-xl font-black text-white uppercase tracking-tight">
                 {language === "bn" ? "প্লাটিনাম জিম শাখা নেটওয়ার্ক" : "Official Multi-Branch Locations"}
               </h4>
             </div>
-            <div className="flex items-center gap-3 text-xs text-zinc-400">
+            <div className="flex items-center gap-4 text-xs mono-label text-zinc-400">
               <span className="flex items-center gap-1.5 text-white">
                 <Globe className="w-3.5 h-3.5 text-[#22c55e]" />
                 <a
@@ -309,34 +339,34 @@ export default function PricingSection() {
                 </a>
               </span>
               <span>•</span>
-              <span>Est. 2015</span>
+              <span>EST. 2015</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-              <span className="text-[11px] text-zinc-500 font-semibold block mb-1">Branch 01</span>
-              <span className="text-white font-bold block mb-1">Block-J, Banasree</span>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
+            <div className="p-4 rounded-xs bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-[10px] text-zinc-500 uppercase block mb-1">BRANCH 01</span>
+              <span className="text-white font-bold block mb-1 font-sans">Block-J, Banasree</span>
+              <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
                 House-01, Road-07, Block-J, Banasree, Dhaka-1219
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#22c55e]/5 border border-[#22c55e]/30 relative">
-              <span className="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#22c55e] text-black">
-                Current Campus
+            <div className="p-4 rounded-xs bg-[#22c55e]/5 border border-[#22c55e]/30 relative">
+              <span className="absolute top-2 right-2 text-[9px] font-bold px-1.5 py-0.2 rounded-xs bg-[#22c55e] text-black uppercase">
+                THIS CAMPUS
               </span>
-              <span className="text-[11px] text-[#22c55e] font-semibold block mb-1">Branch 02</span>
-              <span className="text-white font-bold block mb-1">Block-D, Banasree</span>
-              <p className="text-xs text-zinc-300 leading-relaxed">
-                House-16, Road-03, Block-D, Banasree, Rampura, Dhaka-1219
+              <span className="text-[10px] text-[#22c55e] uppercase block mb-1">BRANCH 02</span>
+              <span className="text-white font-bold block mb-1 font-sans">Block-D, Banasree</span>
+              <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
+                House: 16, Road: 03, Block: D, Banasree, Rampura, Dhaka-1219
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-              <span className="text-[11px] text-zinc-500 font-semibold block mb-1">Branch 03</span>
-              <span className="text-white font-bold block mb-1">Aftab Nagar, Badda</span>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+            <div className="p-4 rounded-xs bg-white/[0.02] border border-white/[0.06]">
+              <span className="text-[10px] text-zinc-500 uppercase block mb-1">BRANCH 03</span>
+              <span className="text-white font-bold block mb-1 font-sans">Aftab Nagar, Badda</span>
+              <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
                 Siraj Convention Center, Level 7, Plot No-39, Block-C, Aftab Nagar, Badda, Dhaka 1212
               </p>
             </div>
