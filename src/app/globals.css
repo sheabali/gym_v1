@@ -126,16 +126,14 @@
   outline-offset: 2px !important;
 }
 
-/* Ensure all green primary buttons have high-contrast solid black text and strokes */
+/* Ensure all green primary buttons and links have high-contrast solid black text and strokes */
 button.bg-\[\#22c55e\],
-a.bg-\[\#22c55e\],
-.bg-\[\#22c55e\] {
+a.bg-\[\#22c55e\] {
   color: #000000 !important;
 }
 
 button.bg-\[\#22c55e\] *,
-a.bg-\[\#22c55e\] *,
-.bg-\[\#22c55e\] * {
+a.bg-\[\#22c55e\] * {
   color: #000000 !important;
   stroke: #000000 !important;
 }
@@ -271,11 +269,12 @@ html.light .bg-gray-900:not(button):not(a) {
   background-color: #f1f5f9 !important;
 }
 
-html.light .bg-black:not(button):not(a),
+html.light .bg-black:not(button):not(a):not(.keep-dark),
 html.light .bg-black\/95,
 html.light .bg-black\/90,
 html.light .bg-black\/80,
-html.light .bg-black\/75 {
+html.light .bg-black\/75,
+html.light .bg-black\/60 {
   background-color: #f1f5f9 !important;
 }
 
@@ -340,11 +339,16 @@ html.light .hover\:bg-\[\#16a34a\]:hover {
   color: #000000 !important;
 }
 
-html.light .bg-\[\#22c55e\] span,
+html.light .bg-\[\#22c55e\] span:not(.keep-dark),
 html.light .bg-\[\#22c55e\] svg,
-html.light .bg-\[\#16a34a\] span,
+html.light .bg-\[\#16a34a\] span:not(.keep-dark),
 html.light .bg-\[\#16a34a\] svg {
   color: #000000 !important;
+}
+
+html.light .keep-dark {
+  background-color: #09090b !important;
+  color: #22c55e !important;
 }
 
 /* Borders */

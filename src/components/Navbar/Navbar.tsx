@@ -96,19 +96,19 @@ export default function Navbar() {
               className="flex items-center gap-3 group focus:outline-none"
             >
               <div className="w-7 h-7 bg-[#22c55e] text-black flex items-center justify-center font-black text-xs tracking-tighter rounded-xs transition-colors">
-                PG
+                {BUSINESS_INFO.shortCode}
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
                   <span className="font-extrabold text-sm sm:text-base tracking-tight text-white group-hover:text-zinc-200 transition-colors">
-                    PLATINUM GYM
+                    {BUSINESS_INFO.name.toUpperCase()}
                   </span>
                   <span className="text-[9px] font-mono px-1.5 py-0.2 rounded-sm bg-[#22c55e]/15 text-[#22c55e] border border-[#22c55e]/30 font-bold">
-                    EST. 2015
+                    {BUSINESS_INFO.established}
                   </span>
                 </div>
                 <span className="text-[10px] mono-label text-zinc-400">
-                  {BUSINESS_INFO.nameBangla} • BANASREE
+                  {BUSINESS_INFO.nameBangla} • {BUSINESS_INFO.area.toUpperCase()}
                 </span>
               </div>
             </Link>

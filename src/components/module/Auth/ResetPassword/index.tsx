@@ -119,7 +119,7 @@ export default function ResetPasswordPage() {
               Reset Password
             </h1>
             <p className="mt-1.5 text-xs sm:text-sm text-zinc-400 font-sans">
-              Enter your new secure password to restore access to your Platinum Gym account.
+              Enter your new secure password to restore access to your gym account.
             </p>
           </div>
 

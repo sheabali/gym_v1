@@ -116,9 +116,9 @@ export default function UserDashboardPage() {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#22c55e] bg-[#22c55e]/10 px-2 py-0.5 rounded-xs border border-[#22c55e]/30">
-              PLATINUM ATHLETE
+              MEMBER ATHLETE
             </span>
-            <span className="text-xs text-zinc-500 font-mono">• BANASREE BLOCK-D</span>
+            <span className="text-xs text-zinc-500 font-mono">• MEMBER PORTAL</span>
           </div>
           <h1 className="text-2xl font-black text-white uppercase tracking-tight">
             Welcome back, {user?.name || "Member"}

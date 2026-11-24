@@ -41,7 +41,7 @@ export default function HeroSection() {
             {/* Clean Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-zinc-300 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
-              <span>Premier 100% Air-Conditioned Fitness Center in Banasree</span>
+              <span>Premier 100% Air-Conditioned Fitness Center</span>
             </div>
 
             {/* Confident, Modern Headline */}
@@ -59,15 +59,15 @@ export default function HeroSection() {
             {/* Bengali & English Identity */}
             <div className="text-base sm:text-lg font-semibold text-zinc-200 mb-4">
               {language === "bn"
-                ? "প্লাটিনাম জিম • বনশ্রীর সর্বাধুনিক সেন্ট্রাল এসি ফিটনেস সেন্টার"
-                : "Platinum Gym (প্লাটিনাম জিম) • House-16, Road-03, Block-D, Banasree"}
+                ? `${BUSINESS_INFO.nameBangla} • সর্বাধুনিক সেন্ট্রাল এসি ফিটনেস সেন্টার`
+                : `${BUSINESS_INFO.name} (${BUSINESS_INFO.nameBangla}) • ${BUSINESS_INFO.addressEn}`}
             </div>
 
             {/* Description */}
             <p className="text-sm sm:text-base text-zinc-400 max-w-xl leading-relaxed mb-8 font-normal">
               {language === "bn"
                 ? "তীব্র গরমেও সার্বক্ষণিক শীতল পরিবেশ, বায়োমেকানিক্যালি ক্যালিব্রেটেড মেশিনারি, পুরুষ ও নারীদের জন্য আলাদা শিফট এবং অভিজ্ঞ ট্রেইনারদের আন্তরিক তত্ত্বাবধান।"
-                : "A purposeful training environment in Block-D, Banasree. Uncompromising climate control, biomechanically engineered machinery, and strictly dedicated shifts for male and female members."}
+                : `A purposeful training environment in ${BUSINESS_INFO.area}. Uncompromising climate control, biomechanically engineered machinery, and strictly dedicated shifts for male and female members.`}
             </p>
 
             {/* Action Buttons */}
@@ -96,8 +96,8 @@ export default function HeroSection() {
                   <Star className="w-3.5 h-3.5 fill-[#22c55e] text-[#22c55e]" />
                   <span>Google Rating</span>
                 </div>
-                <div className="text-xl font-bold text-white">4.4 / 5.0</div>
-                <div className="text-xs text-zinc-500 mt-0.5">173 Verified Reviews</div>
+                <div className="text-xl font-bold text-white">{BUSINESS_INFO.googleRating} / 5.0</div>
+                <div className="text-xs text-zinc-500 mt-0.5">{BUSINESS_INFO.reviewCount} Verified Reviews</div>
               </div>
 
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.12] transition-colors">
@@ -115,7 +115,7 @@ export default function HeroSection() {
                   <span>Daily Schedule</span>
                 </div>
                 <div className="text-xl font-bold text-white">07:00 AM</div>
-                <div className="text-xs text-zinc-500 mt-0.5">Open Daily • Banasree</div>
+                <div className="text-xs text-zinc-500 mt-0.5">Open Daily • {BUSINESS_INFO.area}</div>
               </div>
             </div>
           </motion.div>
@@ -130,7 +130,7 @@ export default function HeroSection() {
             <div className="w-full relative border border-white/[0.08] bg-[#0e0e12]/80 backdrop-blur-sm p-4 rounded-2xl shadow-2xl">
               <div className="flex items-center justify-between pb-3 border-b border-white/[0.06] text-xs text-zinc-400">
                 <span className="font-semibold text-white">Olympic Standard Equipment</span>
-                <span className="text-[#22c55e] font-medium">Banasree Dhaka</span>
+                <span className="text-[#22c55e] font-medium">{BUSINESS_INFO.area}</span>
               </div>
 
               {/* 3D Canvas Rig */}

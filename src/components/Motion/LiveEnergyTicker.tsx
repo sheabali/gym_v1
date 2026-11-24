@@ -11,21 +11,21 @@ export default function LiveEnergyTicker() {
     language === "bn"
       ? [
           "১০০% সেন্ট্রাল এয়ার-কন্ডিশন্ড",
-          "বাড়ি-১৬, রোড-০৩, ব্লক-ডি, বনশ্রী",
-          "গুগল রেটিং ৪.৪★ (১৭৩+ ভেরিফাইড রিভিউ)",
+          BUSINESS_INFO.addressBn,
+          `গুগল রেটিং ${BUSINESS_INFO.googleRating}★ (${BUSINESS_INFO.reviewCount}+ ভেরিফাইড রিভিউ)`,
           "আলাদা পুরুষ ও নারী শিফট ব্যবস্থা",
           "প্রতি শিফটে সার্টিফাইড ফ্লোর কোচ",
           "প্রতিদিন সকাল ০৭:০০ টায় খোলে",
-          "সরাসরি ফোন: ০১৭৩৩-৫২১০৫২",
+          `সরাসরি ফোন: ${BUSINESS_INFO.phone}`,
         ]
       : [
           "100% Inverter Central Air Conditioning",
-          "House-16, Road-03, Block-D, Banasree",
-          "Google Rating 4.4★ (173 Verified Reviews)",
+          BUSINESS_INFO.addressEn,
+          `Google Rating ${BUSINESS_INFO.googleRating}★ (${BUSINESS_INFO.reviewCount}+ Verified Reviews)`,
           "Dedicated Separate Male & Female Time Slots",
           "Certified Floor Trainers on Duty Every Shift",
           "Open Daily from 07:00 AM",
-          "Direct Front Desk: 01733-521052",
+          `Direct Front Desk: ${BUSINESS_INFO.phone}`,
         ];
 
   return (

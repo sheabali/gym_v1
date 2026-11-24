@@ -1,3 +1,5 @@
+import { BUSINESS_INFO } from "./gymData";
+
 export const TRANSLATIONS = {
   en: {
     nav: {
@@ -11,31 +13,31 @@ export const TRANSLATIONS = {
       faq: "FAQ",
       contact: "Contact",
       joinNow: "Join Now",
-      callUs: "Call 01733-521052",
+      callUs: `Call ${BUSINESS_INFO.phone}`,
       switchLang: "বাংলা",
     },
     hero: {
-      badge: "DHAKA'S ELITE FITNESS SANCTUARY",
+      badge: "ELITE FITNESS SANCTUARY",
       headlinePrefix: "UNLEASH YOUR",
-      headlineGradient: "PLATINUM",
+      headlineGradient: "ULTIMATE",
       headlineSuffix: "STRENGTH",
       subheadline:
-        "Banasree’s premier 100% air-conditioned gym with world-class machinery, certified trainers in every shift, and strictly dedicated time slots for Male and Female members.",
+        `${BUSINESS_INFO.area}’s premier 100% air-conditioned gym with world-class machinery, certified trainers in every shift, and strictly dedicated time slots for Male and Female members.`,
       joinNow: "Join Now",
-      callNow: "Call 01733-521052",
+      callNow: `Call ${BUSINESS_INFO.phone}`,
       bookTrial: "Book Free Trial",
       hoursBadge: "Opens Daily at 7:00 AM",
-      ratingBadge: "4.4 Google Rating (173 reviews)",
+      ratingBadge: `${BUSINESS_INFO.googleRating} Google Rating (${BUSINESS_INFO.reviewCount} reviews)`,
     },
     about: {
       badge: "OUR PHILOSOPHY",
-      title: "Engineered for Serious Progress in Banasree",
+      title: `Engineered for Serious Progress in ${BUSINESS_INFO.area}`,
       description1:
-        "Located at House-16, Road-03, Block-D in Banasree, Platinum Gym was built with one clear mission: to provide the people of Dhaka an authentic, hygienic, and results-driven training sanctuary without compromises.",
+        `Located at ${BUSINESS_INFO.addressEn}, ${BUSINESS_INFO.name} was built with one clear mission: to provide an authentic, hygienic, and results-driven training sanctuary without compromises.`,
       description2:
         "Unlike crowded basements, we offer a completely air-conditioned facility with premium biomechanical equipment, high ceilings, clean locker rooms, and certified trainers actively stationed on the floor during every shift.",
       card1Title: "100% Climate Controlled",
-      card1Desc: "Full air-conditioning so your endurance doesn't wilt in Dhaka's intense heat and humidity.",
+      card1Desc: "Full air-conditioning so your endurance doesn't wilt in intense summer heat and humidity.",
       card2Title: "Zero Waiting Times",
       card2Desc: "Diverse sets of dumbbells, squat racks, and cable stacks ensure you never wait for weights.",
       card3Title: "Total Safety & Privacy",
@@ -61,7 +63,7 @@ export const TRANSLATIONS = {
       trainerOnDuty: "Trainer on floor:",
       daysActive: "Days:",
       editableNotice:
-        "Note: Shift timings can be adapted during Ramadan or public holidays. Contact reception at 01733-521052 for schedule inquiries.",
+        `Note: Shift timings can be adapted during Ramadan or public holidays. Contact reception at ${BUSINESS_INFO.phone} for schedule inquiries.`,
     },
     trainers: {
       badge: "EXPERT COACHING",
@@ -83,7 +85,7 @@ export const TRANSLATIONS = {
       guarantee: "Easy payment via bKash, Nagad, Cards & Cash at desk.",
     },
     gallery: {
-      badge: "INSIDE PLATINUM GYM",
+      badge: `INSIDE ${BUSINESS_INFO.name.toUpperCase()}`,
       title: "Take a Visual Tour of the Sanctuary",
       subtitle:
         "Take a peek at our spacious air-conditioned floor, heavy dumbbell stations, modern cardio machines, and clean training zones.",
@@ -95,16 +97,16 @@ export const TRANSLATIONS = {
     },
     reviews: {
       badge: "REAL COMMUNITY REVIEWS",
-      title: "Trusted by Banasree’s Fitness Community",
+      title: "Trusted by the Local Fitness Community",
       subtitle:
-        "Read authentic experiences from 173+ members who train at Platinum Gym every single day.",
+        `Read authentic experiences from ${BUSINESS_INFO.reviewCount}+ members who train at ${BUSINESS_INFO.name} every single day.`,
       googleSummary: "Google Verified Reviews",
       outOfFive: "out of 5.0",
       viewAllOnGoogle: "View on Google Maps",
     },
     stats: {
       badge: "PROVEN TRACK RECORD",
-      title: "Why Dhaka Chooses Platinum Gym",
+      title: `Why Members Choose ${BUSINESS_INFO.name}`,
       subtitle: "Numbers backed by dedication, hygiene, and genuine member transformations.",
     },
     faq: {
@@ -117,12 +119,12 @@ export const TRANSLATIONS = {
       badge: "START YOUR TRANSFORMATION",
       title: "Get in Touch or Visit Today",
       subtitle:
-        "Fill out this quick form to reserve your free trial workout, or call our front desk directly at 01733-521052.",
+        `Fill out this quick form to reserve your free trial workout, or call our front desk directly at ${BUSINESS_INFO.phone}.`,
       formTitle: "Book Your Free Trial / Membership Inquiry",
       nameLabel: "Your Full Name",
       namePlaceholder: "e.g., Ahsan Habib",
       phoneLabel: "Phone Number (WhatsApp preferred)",
-      phonePlaceholder: "01733-XXXXXX",
+      phonePlaceholder: "017XX-XXXXXX",
       planLabel: "Plan of Interest",
       slotLabel: "Preferred Shift Slot",
       messageLabel: "Any Fitness Goal or Note (Optional)",
@@ -130,24 +132,24 @@ export const TRANSLATIONS = {
       submitButton: "Send Inquiry / Book Free Trial",
       submitting: "Submitting...",
       addressTitle: "Our Location",
-      addressText: "House-16, Road-03, Block-D, Banasree, Dhaka 1219",
-      plusCodeText: "Plus Code: QC6J+VP Dhaka",
+      addressText: BUSINESS_INFO.addressEn,
+      plusCodeText: BUSINESS_INFO.plusCode,
       phoneTitle: "Direct Phone Line",
-      phoneText: "01733-521052",
+      phoneText: BUSINESS_INFO.phone,
       hoursTitle: "Operating Hours",
-      hoursText: "Daily: 7:00 AM – 10:30 PM",
+      hoursText: BUSINESS_INFO.openingHoursEn,
       whatsappButton: "Chat on WhatsApp",
       callButton: "Direct Call",
       getDirections: "Get Google Map Directions",
     },
     footer: {
       tagline:
-        "Banasree’s premier air-conditioned fitness club. Equipped with world-class machines, dedicated shift slots, and certified instructors for your lifelong transformation.",
+        `${BUSINESS_INFO.area}’s premier air-conditioned fitness club. Equipped with world-class machines, dedicated shift slots, and certified instructors for your lifelong transformation.`,
       quickLinks: "Quick Navigation",
       contactInfo: "Contact Details",
       hoursTitle: "Working Schedule",
-      copyright: `© ${new Date().getFullYear()} Platinum Gym (প্লাটিনাম জিম). All Rights Reserved. House-16, Road-03, Block-D, Banasree, Dhaka 1219.`,
-      designedWith: "Crafted for excellence in Banasree, Dhaka.",
+      copyright: `© ${new Date().getFullYear()} ${BUSINESS_INFO.name} (${BUSINESS_INFO.nameBangla}). All Rights Reserved. ${BUSINESS_INFO.addressEn}`,
+      designedWith: `Crafted for excellence in ${BUSINESS_INFO.area}.`,
     },
     floating: {
       call: "Call Us",
@@ -167,31 +169,31 @@ export const TRANSLATIONS = {
       faq: "প্রশ্নোত্তর",
       contact: "যোগাযোগ",
       joinNow: "ভর্তি হন",
-      callUs: "কল করুন 01733-521052",
+      callUs: `কল করুন ${BUSINESS_INFO.phone}`,
       switchLang: "English",
     },
     hero: {
-      badge: "ঢাকার প্রিমিয়াম ফিটনেস সেন্টার",
+      badge: "প্রিমিয়াম ফিটনেস সেন্টার",
       headlinePrefix: "শুরু হোক আপনার",
-      headlineGradient: "প্লাটিনাম",
+      headlineGradient: "শ্রেষ্ঠ",
       headlineSuffix: "ফিটনেস জার্নি",
       subheadline:
-        "বনশ্রীর সম্পূর্ণ এয়ার-কন্ডিশন্ড জিম। সকল প্রকার আধুনিক যন্ত্রপাতি, প্রতিটি শিফটে অভিজ্ঞ সার্টিফাইড ট্রেইনার এবং পুরুষ ও নারীদের জন্য সম্পূর্ণ আলাদা শিফট ব্যবস্থা।",
+        `সম্পূর্ণ এয়ার-কন্ডিশন্ড জিম। সকল প্রকার আধুনিক যন্ত্রপাতি, প্রতিটি শিফটে অভিজ্ঞ সার্টিফাইড ট্রেইনার এবং পুরুষ ও নারীদের জন্য সম্পূর্ণ আলাদা শিফট ব্যবস্থা।`,
       joinNow: "ভর্তি হন",
-      callNow: "কল করুন 01733-521052",
+      callNow: `কল করুন ${BUSINESS_INFO.phone}`,
       bookTrial: "ফ্রি ট্রায়াল বুক করুন",
       hoursBadge: "প্রতিদিন সকাল ৭:০০ টায় খোলে",
-      ratingBadge: "৪.৪ গুগল রেটিং (১৭৩+ রিভিউ)",
+      ratingBadge: `${BUSINESS_INFO.googleRating} গুগল রেটিং (${BUSINESS_INFO.reviewCount}+ রিভিউ)`,
     },
     about: {
       badge: "আমাদের লক্ষ্য",
-      title: "বনশ্রীতে সঠিক ও স্বাস্থ্যকর ফিটনেস পরিবেশ",
+      title: "সঠিক ও স্বাস্থ্যকর ফিটনেস পরিবেশ",
       description1:
-        "বনশ্রী ব্লক-ডি, রোড-০৩, বাড়ি-১৬ নম্বরে অবস্থিত প্লাটিনাম জিমের মূল লক্ষ্য হলো একটি পরিষ্কার, সুপরিসর এবং ফলাফলমুখী জিমের অভিজ্ঞতা উপহার দেওয়া।",
+        `${BUSINESS_INFO.addressBn}-এ অবস্থিত ${BUSINESS_INFO.nameBangla}-এর মূল লক্ষ্য হলো একটি পরিষ্কার, সুপরিসর এবং ফলাফলমুখী জিমের অভিজ্ঞতা উপহার দেওয়া।`,
       description2:
         "অতিরিক্ত স্যাঁতসেঁতে বা ঘিঞ্জি পরিবেশ নয়, বরং সার্বক্ষণিক সেন্ট্রাল এসি, বিশ্বমানের বায়োমেকানিক্যাল ইকুইপমেন্ট এবং প্রতিটি শিফটে উপস্থিত সার্টিফাইড ট্রেইনারদের আন্তরিক সহযোগিতাই আমাদের বিশেষত্ব।",
       card1Title: "১০০% সেন্ট্রাল এসি",
-      card1Desc: "ঢাকার তীব্র গরমেও ঠান্ডা ও সতেজ পরিবেশে ক্লান্তিহীন ওয়ার্কআউট নিশ্চিত করে।",
+      card1Desc: "তীব্র গরমেও ঠান্ডা ও সতেজ পরিবেশে ক্লান্তিহীন ওয়ার্কআউট নিশ্চিত করে।",
       card2Title: "পর্যাপ্ত ইকুইপমেন্ট",
       card2Desc: "প্রচুর ডাম্বেল, স্কোয়াট র‍্যাক ও কেবল মেশিন থাকায় কোনো মেশিনের জন্য অপেক্ষা করতে হয় না।",
       card3Title: "নারী ও পুরুষদের আলাদা সময়",
@@ -217,7 +219,7 @@ export const TRANSLATIONS = {
       trainerOnDuty: "উপস্থিত ট্রেইনার:",
       daysActive: "বারসমূহ:",
       editableNotice:
-        "বিশেষ দ্রষ্টব্য: রমজান বা বিশেষ ছুটির দিনে শিফট সময়ের পরিবর্তন হতে পারে। বিস্তারিত জানতে 01733-521052 নম্বরে যোগাযোগ করুন।",
+        `বিশেষ দ্রষ্টব্য: রমজান বা বিশেষ ছুটির দিনে শিফট সময়ের পরিবর্তন হতে পারে। বিস্তারিত জানতে ${BUSINESS_INFO.phone} নম্বরে যোগাযোগ করুন।`,
     },
     trainers: {
       badge: "সার্টিফাইড প্রশিক্ষক",
@@ -240,7 +242,7 @@ export const TRANSLATIONS = {
     },
     gallery: {
       badge: "গ্যালারি",
-      title: "প্লাটিনাম জিমের অন্দরমহল",
+      title: `${BUSINESS_INFO.nameBangla}-এর অন্দরমহল`,
       subtitle:
         "আমাদের সুপরিসর ফ্লোর, ভারী ডাম্বেল কর্নার, ট্রেডমিল এবং পরিচ্ছন্ন পরিবেশ এক নজরে দেখে নিন।",
       filterAll: "সব ছবি",
@@ -251,16 +253,16 @@ export const TRANSLATIONS = {
     },
     reviews: {
       badge: "সদস্যদের মতামত",
-      title: "বনশ্রীবাসীর আস্থার প্রতীক",
+      title: "সদস্যদের আস্থার প্রতীক",
       subtitle:
-        "গুগলে ৪.৪ স্টার রেটিং এবং ১৭৩+ রিভিউ পাওয়া প্লাটিনাম জিম নিয়ে নিয়মিত সদস্যদের অভিজ্ঞতা শুনুন।",
+        `গুগলে ${BUSINESS_INFO.googleRating} স্টার রেটিং এবং ${BUSINESS_INFO.reviewCount}+ রিভিউ পাওয়া ${BUSINESS_INFO.nameBangla} নিয়ে নিয়মিত সদস্যদের অভিজ্ঞতা শুনুন।`,
       googleSummary: "গুগল ভেরিফাইড রিভিউ",
       outOfFive: "৫.০ এর মধ্যে",
       viewAllOnGoogle: "গুগল ম্যাপসে সব রিভিউ দেখুন",
     },
     stats: {
       badge: "আমাদের অর্জন",
-      title: "কেন বনশ্রীতে প্লাটিনাম জিমই সেরা?",
+      title: `কেন ${BUSINESS_INFO.nameBangla}-ই সেরা?`,
       subtitle: "সঠিক ইকুইপমেন্ট, পরিচ্ছন্ন পরিবেশ এবং সদস্যদের সন্তুষ্টি আমাদের এগিয়ে রাখে।",
     },
     faq: {
@@ -273,12 +275,12 @@ export const TRANSLATIONS = {
       badge: "আজই শুরু করুন",
       title: "যোগাযোগ করুন অথবা সরাসরি চলে আসুন",
       subtitle:
-        "ফ্রি ট্রায়াল সেশনের জন্য নিচের ফর্মটি পূরণ করুন অথবা সরাসরি ফোন করুন 01733-521052 নম্বরে।",
+        `ফ্রি ট্রায়াল সেশনের জন্য নিচের ফর্মটি পূরণ করুন অথবা সরাসরি ফোন করুন ${BUSINESS_INFO.phone} নম্বরে।`,
       formTitle: "ফ্রি ট্রায়াল বা ভর্তি সংক্রান্ত তথ্য",
       nameLabel: "আপনার পূর্ণ নাম",
       namePlaceholder: "যেমন: মো: আহসান হাবীব",
       phoneLabel: "মোবাইল নম্বর (হোয়াটসঅ্যাপ থাকলে ভালো)",
-      phonePlaceholder: "০১৭১১-XXXXXX",
+      phonePlaceholder: "০১৭XX-XXXXXX",
       planLabel: "পছন্দের মেম্বারশিপ প্ল্যান",
       slotLabel: "পছন্দের শিফট",
       messageLabel: "আপনার লক্ষ্য বা কোনো প্রশ্ন (ঐচ্ছিক)",
@@ -286,24 +288,24 @@ export const TRANSLATIONS = {
       submitButton: "তথ্য পাঠান / ফ্রি ট্রায়াল বুক করুন",
       submitting: "পাঠানো হচ্ছে...",
       addressTitle: "ঠিকানা",
-      addressText: "বাড়ি-১৬, রোড-০৩, ব্লক-ডি, বনশ্রী, ঢাকা ১২১৯",
-      plusCodeText: "প্লাস কোড: QC6J+VP Dhaka",
+      addressText: BUSINESS_INFO.addressBn,
+      plusCodeText: BUSINESS_INFO.plusCode,
       phoneTitle: "সরাসরি ফোন",
-      phoneText: "01733-521052",
+      phoneText: BUSINESS_INFO.phone,
       hoursTitle: "খোলা থাকার সময়",
-      hoursText: "প্রতিদিন: সকাল ৭:০০ – রাত ১০:৩০",
+      hoursText: BUSINESS_INFO.openingHoursBn,
       whatsappButton: "হোয়াটসঅ্যাপে মেসেজ দিন",
       callButton: "সরাসরি কল দিন",
       getDirections: "গুগল ম্যাপে দিকনির্দেশনা",
     },
     footer: {
       tagline:
-        "বনশ্রীর সেরা এয়ার-কন্ডিশন্ড জিম। সকল প্রকার আধুনিক যন্ত্রপাতি, পুরুষ ও নারীদের জন্য আলাদা শিফট এবং দক্ষ ট্রেইনারের তত্ত্বাবধানে গড়ে তুলুন আপনার সুস্থ ভবিষ্যৎ।",
+        "সেরা এয়ার-কন্ডিশন্ড জিম। সকল প্রকার আধুনিক যন্ত্রপাতি, পুরুষ ও নারীদের জন্য আলাদা শিফট এবং দক্ষ ট্রেইনারের তত্ত্বাবধানে গড়ে তুলুন আপনার সুস্থ ভবিষ্যৎ।",
       quickLinks: "প্রয়োজনীয় লিংক",
       contactInfo: "যোগাযোগের ঠিকানা",
       hoursTitle: "কাজের সময়",
-      copyright: `© ${new Date().getFullYear()} প্লাটিনাম জিম (Platinum Gym). সর্বস্বত্ব সংরক্ষিত। বাড়ি-১৬, রোড-০৩, ব্লক-ডি, বনশ্রী, ঢাকা ১২১৯।`,
-      designedWith: "বনশ্রী, ঢাকায় তৈরি আপনার সেরা ফিটনেস পার্টনার।",
+      copyright: `© ${new Date().getFullYear()} ${BUSINESS_INFO.nameBangla} (${BUSINESS_INFO.name}). সর্বস্বত্ব সংরক্ষিত। ${BUSINESS_INFO.addressBn}।`,
+      designedWith: "আপনার সেরা ফিটনেস পার্টনার।",
     },
     floating: {
       call: "কল দিন",

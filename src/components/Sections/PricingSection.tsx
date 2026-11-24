@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import { PRICING_PLANS } from "@/src/data/gymData";
+import { BUSINESS_INFO, PRICING_PLANS } from "@/src/data/gymData";
 import { useGetPlansQuery } from "@/redux/api/planApi";
 import { useCheckoutSubscriptionMutation } from "@/redux/api/subscriptionApi";
 import { useAppSelector } from "@/redux/hooks";
@@ -198,11 +198,10 @@ export default function PricingSection() {
                   className="h-full"
                 >
                   <div
-                    className={`h-full flex flex-col justify-between transition-all duration-300 relative rounded-2xl p-6 sm:p-7 bg-[#0e0e12] border hover:-translate-y-1 shadow-xl ${
-                      isPopular
-                        ? "border-[#22c55e]/60 ring-1 ring-[#22c55e]/30 shadow-2xl shadow-[#22c55e]/10"
-                        : "border-white/[0.08] hover:border-white/[0.2]"
-                    }`}
+                    className={`h-full flex flex-col justify-between transition-all duration-300 relative rounded-2xl p-6 sm:p-7 bg-[#0e0e12] border hover:-translate-y-1 shadow-xl ${isPopular
+                      ? "border-[#22c55e]/60 ring-1 ring-[#22c55e]/30 shadow-2xl shadow-[#22c55e]/10"
+                      : "border-white/[0.08] hover:border-white/[0.2]"
+                      }`}
                   >
                     <div>
                       {/* Top Plan Header & Badge */}
@@ -211,11 +210,10 @@ export default function PricingSection() {
                           {name}
                         </h3>
                         {badge && (
-                          <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${
-                            isPopular
-                              ? "bg-[#22c55e] text-black"
-                              : "bg-white/[0.06] text-zinc-300 border border-white/[0.08]"
-                          }`}>
+                          <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${isPopular
+                            ? "bg-[#22c55e] text-black"
+                            : "bg-white/[0.06] text-zinc-300 border border-white/[0.08]"
+                            }`}>
                             {badge}
                           </span>
                         )}
@@ -266,11 +264,10 @@ export default function PricingSection() {
                     <div className="pt-2 mt-auto">
                       <MagneticButton
                         onClick={() => handleSelectPlan(plan.rawId, plan.nameEn, plan.pricePaisa, plan.durationDays)}
-                        className={`w-full py-3 text-xs font-bold rounded-sm transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-md ${
-                          isPopular
-                            ? "bg-[#22c55e] !text-black hover:bg-[#16a34a] shadow-[#22c55e]/25"
-                            : "bg-white/[0.04] border border-white/[0.1] text-zinc-200 hover:bg-[#22c55e] hover:!text-black hover:border-[#22c55e]"
-                        }`}
+                        className={`w-full py-3 text-xs font-bold rounded-sm transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-md ${isPopular
+                          ? "bg-[#22c55e] !text-black hover:bg-[#16a34a] shadow-[#22c55e]/25"
+                          : "bg-white/[0.04] border border-white/[0.1] text-zinc-200 hover:bg-[#22c55e] hover:!text-black hover:border-[#22c55e]"
+                          }`}
                       >
                         <span className={isPopular ? "!text-black" : ""}>
                           {token && plan.pricePaisa ? (language === "bn" ? "সাবস্ক্রাইব করুন" : "Subscribe Now") : t.pricing.selectPlan}
@@ -290,35 +287,35 @@ export default function PricingSection() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.06]">
             <div>
               <span className="text-xs text-[#22c55e] font-semibold block mb-1">
-                Platinum Gym Network • 3 Official Branches
+                {BUSINESS_INFO.name} Network • 3 Official Branches
               </span>
               <h4 className="text-xl font-bold text-white tracking-tight">
-                {language === "bn" ? "প্লাটিনাম জিম শাখা নেটওয়ার্ক" : "Official Multi-Branch Locations"}
+                {language === "bn" ? `${BUSINESS_INFO.nameBangla} শাখা নেটওয়ার্ক` : "Official Multi-Branch Locations"}
               </h4>
             </div>
             <div className="flex items-center gap-3 text-xs text-zinc-400">
               <span className="flex items-center gap-1.5 text-white">
                 <Globe className="w-3.5 h-3.5 text-[#22c55e]" />
                 <a
-                  href="https://www.platinumgym.com"
+                  href={`https://${BUSINESS_INFO.website}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#22c55e] transition-colors"
                 >
-                  www.platinumgym.com
+                  {BUSINESS_INFO.website}
                 </a>
               </span>
               <span>•</span>
-              <span>Est. 2015</span>
+              <span>{BUSINESS_INFO.established}</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
               <span className="text-[11px] text-zinc-500 font-semibold block mb-1">Branch 01</span>
-              <span className="text-white font-bold block mb-1">Block-J, Banasree</span>
+              <span className="text-white font-bold block mb-1">North Campus</span>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                House-01, Road-07, Block-J, Banasree, Dhaka-1219
+                {BUSINESS_INFO.branches[0]?.locationEn}
               </p>
             </div>
 
@@ -327,17 +324,17 @@ export default function PricingSection() {
                 Current Campus
               </span>
               <span className="text-[11px] text-[#22c55e] font-semibold block mb-1">Branch 02</span>
-              <span className="text-white font-bold block mb-1">Block-D, Banasree</span>
+              <span className="text-white font-bold block mb-1">{BUSINESS_INFO.area}</span>
               <p className="text-xs text-zinc-300 leading-relaxed">
-                House-16, Road-03, Block-D, Banasree, Rampura, Dhaka-1219
+                {BUSINESS_INFO.branches[1]?.locationEn}
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]">
               <span className="text-[11px] text-zinc-500 font-semibold block mb-1">Branch 03</span>
-              <span className="text-white font-bold block mb-1">Aftab Nagar, Badda</span>
+              <span className="text-white font-bold block mb-1">West Campus</span>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Siraj Convention Center, Level 7, Plot No-39, Block-C, Aftab Nagar, Badda, Dhaka 1212
+                {BUSINESS_INFO.branches[2]?.locationEn}
               </p>
             </div>
           </div>
@@ -355,7 +352,7 @@ export default function PricingSection() {
             <DialogDescription className="text-xs text-zinc-400 font-sans">
               {language === "bn"
                 ? "আপনার মেম্বারশিপ এক্টিভেট বা রিনিউ করতে পেমেন্ট মেথড নির্বাচন করুন।"
-                : "Select your payment method to activate or renew your Platinum Gym membership."}
+                : `Select your payment method to activate or renew your ${BUSINESS_INFO.name} membership.`}
             </DialogDescription>
           </DialogHeader>
 

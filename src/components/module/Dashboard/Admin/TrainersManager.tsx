@@ -310,7 +310,7 @@ export default function TrainersManager() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="tariqul@platinumgym.com"
+                  placeholder="coach@apexfitness.demo"
                   required
                   className="bg-[#0b0b0d] border-white/[0.12] text-white placeholder:text-zinc-600 focus-visible:ring-[#22c55e]"
                 />

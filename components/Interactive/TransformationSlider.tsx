@@ -118,8 +118,8 @@ export default function TransformationSlider() {
         <div className="absolute bottom-4 inset-x-4 z-20 flex items-center justify-between pointer-events-none text-[11px] mono-label text-zinc-300">
           <div className="px-3 py-1 bg-black/80 backdrop-blur-md border border-white/[0.08]">
             {language === "bn"
-              ? "সদস্য: মো: রফিকুল ইসলাম • ১২ কেজি মেদ হ্রাস • বনশ্রী ব্রাঞ্চ"
-              : "MEMBER: MD. RAFIQUL ISLAM • 12KG LEAN RECOMP • BANASREE"}
+              ? "সদস্য: মো: রফিকুল ইসলাম • ১২ কেজি মেদ হ্রাস • মেইন ব্রাঞ্চ"
+              : "MEMBER: MD. RAFIQUL ISLAM • 12KG LEAN RECOMP • MAIN BRANCH"}
           </div>
 
           <div className="hidden sm:block px-3 py-1 bg-black/80 backdrop-blur-md border border-white/[0.08]">

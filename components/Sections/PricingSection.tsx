@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import { PRICING_PLANS } from "@/src/data/gymData";
+import { BUSINESS_INFO, PRICING_PLANS } from "@/src/data/gymData";
 import { useGetPlansQuery } from "@/redux/api/planApi";
 import { useCheckoutSubscriptionMutation } from "@/redux/api/subscriptionApi";
 import { useAppSelector } from "@/redux/hooks";
@@ -209,12 +209,12 @@ export default function PricingSection() {
                     <div className="flex flex-col justify-between h-full">
                       <div>
                         {/* Rate Card Green Header Bar */}
-                        <div className="bg-[#22c55e] px-4 py-2.5 flex items-center justify-between">
+                        <div className="bg-[#22c55e] px-4 py-2.5 flex items-center justify-between gap-2">
                           <span className="!text-black font-black text-xs sm:text-sm tracking-wider uppercase">
                             {name}
                           </span>
                           {badge && (
-                            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs bg-black text-[#22c55e] uppercase">
+                            <span className="keep-dark text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs bg-zinc-950 !text-[#22c55e] uppercase shrink-0">
                               {badge}
                             </span>
                           )}
@@ -245,7 +245,7 @@ export default function PricingSection() {
                           </div>
 
                           {/* Grand Total Price Block */}
-                          <div className="mb-6 p-4 rounded-xs bg-black/60 border border-white/[0.08] shadow-inner">
+                          <div className="mb-6 p-4 rounded-xs bg-slate-50 dark:bg-black/60 border border-black/[0.08] dark:border-white/[0.08] shadow-inner">
                             <span className="text-[10px] mono-label text-zinc-400 block mb-1">
                               {language === "bn" ? "সর্বমোট প্রদেয়" : "GRAND TOTAL"}
                             </span>
@@ -299,35 +299,35 @@ export default function PricingSection() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/[0.06]">
             <div>
               <span className="mono-label text-[10px] text-[#22c55e] block mb-1">
-                PLATINUM GYM NETWORK • 3 OFFICIAL BRANCHES
+                {BUSINESS_INFO.name.toUpperCase()} NETWORK • 3 OFFICIAL BRANCHES
               </span>
               <h4 className="text-xl font-black text-white uppercase tracking-tight">
-                {language === "bn" ? "প্লাটিনাম জিম শাখা নেটওয়ার্ক" : "Official Multi-Branch Locations"}
+                {language === "bn" ? `${BUSINESS_INFO.nameBangla} শাখা নেটওয়ার্ক` : "Official Multi-Branch Locations"}
               </h4>
             </div>
             <div className="flex items-center gap-4 text-xs mono-label text-zinc-400">
               <span className="flex items-center gap-1.5 text-white">
                 <Globe className="w-3.5 h-3.5 text-[#22c55e]" />
                 <a
-                  href="https://www.platinumgym.com"
+                  href={`https://${BUSINESS_INFO.website}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#22c55e] transition-colors"
                 >
-                  www.platinumgym.com
+                  {BUSINESS_INFO.website}
                 </a>
               </span>
               <span>•</span>
-              <span>EST. 2015</span>
+              <span>{BUSINESS_INFO.established}</span>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
             <div className="p-4 rounded-xs bg-white/[0.02] border border-white/[0.06]">
               <span className="text-[10px] text-zinc-500 uppercase block mb-1">BRANCH 01</span>
-              <span className="text-white font-bold block mb-1 font-sans">Block-J, Banasree</span>
+              <span className="text-white font-bold block mb-1 font-sans">North Campus</span>
               <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
-                House-01, Road-07, Block-J, Banasree, Dhaka-1219
+                {BUSINESS_INFO.branches[0]?.locationEn}
               </p>
             </div>
 
@@ -336,17 +336,17 @@ export default function PricingSection() {
                 THIS CAMPUS
               </span>
               <span className="text-[10px] text-[#22c55e] uppercase block mb-1">BRANCH 02</span>
-              <span className="text-white font-bold block mb-1 font-sans">Block-D, Banasree</span>
+              <span className="text-white font-bold block mb-1 font-sans">{BUSINESS_INFO.area}</span>
               <p className="text-[11px] text-zinc-300 leading-relaxed font-sans">
-                House: 16, Road: 03, Block: D, Banasree, Rampura, Dhaka-1219
+                {BUSINESS_INFO.branches[1]?.locationEn}
               </p>
             </div>
 
             <div className="p-4 rounded-xs bg-white/[0.02] border border-white/[0.06]">
               <span className="text-[10px] text-zinc-500 uppercase block mb-1">BRANCH 03</span>
-              <span className="text-white font-bold block mb-1 font-sans">Aftab Nagar, Badda</span>
+              <span className="text-white font-bold block mb-1 font-sans">West Campus</span>
               <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
-                Siraj Convention Center, Level 7, Plot No-39, Block-C, Aftab Nagar, Badda, Dhaka 1212
+                {BUSINESS_INFO.branches[2]?.locationEn}
               </p>
             </div>
           </div>
@@ -364,7 +364,7 @@ export default function PricingSection() {
             <DialogDescription className="text-xs text-zinc-400 font-sans">
               {language === "bn"
                 ? "আপনার মেম্বারশিপ এক্টিভেট বা রিনিউ করতে পেমেন্ট মেথড নির্বাচন করুন।"
-                : "Select your payment method to activate or renew your Platinum Gym membership."}
+                : `Select your payment method to activate or renew your ${BUSINESS_INFO.name} membership.`}
             </DialogDescription>
           </DialogHeader>
 

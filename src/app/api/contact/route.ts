@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { BUSINESS_INFO } from "@/data/gymData";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -27,7 +28,7 @@ export async function POST(request: Request) {
     const { name, phone, plan, slot, message } = result.data;
 
     // Stub: In production this can send an SMS, email via Resend, or save to DB/CRM
-    console.log("[Platinum Gym Contact Inquiry Received]:", {
+    console.log(`[${BUSINESS_INFO.name} Contact Inquiry Received]:`, {
       timestamp: new Date().toISOString(),
       name,
       phone,
@@ -46,7 +47,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Contact API error:", error);
     return NextResponse.json(
-      { success: false, message: "Internal server error. Please call us directly at 01733-521052." },
+      { success: false, message: `Internal server error. Please call us directly at ${BUSINESS_INFO.phone}.` },
       { status: 500 }
     );
   }

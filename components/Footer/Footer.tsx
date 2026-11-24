@@ -46,18 +46,18 @@ export default function Footer() {
             <div className="space-y-1">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-7 h-7 bg-[#22c55e] text-black flex items-center justify-center font-black text-xs rounded-lg shadow-sm">
-                  PG
+                  {BUSINESS_INFO.shortCode}
                 </div>
-                <span className="text-xs font-semibold text-zinc-400">Banasree Block-D</span>
+                <span className="text-xs font-semibold text-zinc-400">{BUSINESS_INFO.area}</span>
                 <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#22c55e]/15 text-[#22c55e] border border-[#22c55e]/30">
-                  Est. 2015
+                  {BUSINESS_INFO.established}
                 </span>
               </div>
               <h3 className="text-2xl font-black text-white tracking-tight uppercase">
-                PLATINUM GYM
+                {BUSINESS_INFO.name.toUpperCase()}
               </h3>
               <p className="text-xs text-zinc-400">
-                {BUSINESS_INFO.nameBangla} • Dhaka 1219
+                {BUSINESS_INFO.nameBangla} • {BUSINESS_INFO.area}
               </p>
             </div>
 
@@ -172,11 +172,11 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
-            <span>Platinum Gym Banasree • Dhaka 1219</span>
+            <span>{BUSINESS_INFO.name} • {BUSINESS_INFO.area}</span>
           </div>
 
           <p className="text-center sm:text-left">
-            © {new Date().getFullYear()} Platinum Gym. House-16, Road-03, Block-D, Banasree.
+            © {new Date().getFullYear()} {BUSINESS_INFO.name}. {BUSINESS_INFO.addressEn}
           </p>
 
           <button

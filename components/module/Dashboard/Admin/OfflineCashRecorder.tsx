@@ -213,7 +213,7 @@ export default function OfflineCashRecorder() {
               <Textarea
                 value={paymentNote}
                 onChange={(e) => setPaymentNote(e.target.value)}
-                placeholder="e.g. Paid in physical cash at Banasree desk. Signed receipt #1049."
+                placeholder="e.g. Paid in physical cash at front desk. Signed receipt #1049."
                 rows={2}
                 className="text-xs bg-[#0b0b0d] border-white/[0.12] text-white placeholder:text-zinc-500 focus-visible:ring-[#22c55e]"
               />

@@ -3,11 +3,12 @@ import ReduxProvider from "@/redux/ReduxProvider";
 import { ThemeProvider } from "@/context/ThemeContext";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
+import { BUSINESS_INFO } from "@/data/gymData";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Platinum Gym | Premium Fitness Center in Banasree, Dhaka",
-  description: "Modern, fully air-conditioned fitness center in Banasree, Dhaka. Certified trainers, separate male and female shifts, world-class equipment.",
+  title: `${BUSINESS_INFO.name} | Premium Fitness & Strength Center`,
+  description: `Modern, fully air-conditioned fitness center in ${BUSINESS_INFO.area}. Certified trainers, separate male and female shifts, world-class equipment.`,
 };
 
 export default function RootLayout({

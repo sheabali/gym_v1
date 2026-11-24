@@ -134,7 +134,7 @@ function PaymentResultContent() {
             <div className="flex justify-between py-1 border-b border-gray-50">
               <span className="text-gray-500">Membership Tier</span>
               <span className="font-bold text-gray-900">
-                {payment?.subscription?.planName || "Platinum Membership"}
+                {payment?.subscription?.planName || "Pro Membership"}
               </span>
             </div>
 
@@ -215,7 +215,7 @@ function PaymentResultContent() {
               href="/"
               className="text-center text-xs text-gray-500 hover:text-gray-900 py-1"
             >
-              Return to Platinum Gym Homepage
+              Return to Homepage
             </Link>
           </div>
         </div>

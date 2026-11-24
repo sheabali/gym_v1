@@ -11,34 +11,34 @@ import GallerySection from "@/components/Sections/GallerySection";
 import ReviewsSection from "@/components/Sections/ReviewsSection";
 import FaqSection from "@/components/Sections/FaqSection";
 import ContactSection from "@/components/Sections/ContactSection";
+import { BUSINESS_INFO } from "@/data/gymData";
 
 export const metadata = {
-  title: "Platinum Gym (প্লাটিনাম জিম) | Premier Fitness Center in Banasree, Dhaka",
+  title: `${BUSINESS_INFO.name} (${BUSINESS_INFO.nameBangla}) | Premier Fitness Center in ${BUSINESS_INFO.area}`,
   description:
-    "Banasree’s premier 100% air-conditioned gym. Complete modern equipment, certified trainers in every shift, dedicated male and female time slots. 4.4 Google rating (173 reviews). Call 01733-521052.",
+    `${BUSINESS_INFO.area}’s premier 100% air-conditioned gym. Complete modern equipment, certified trainers in every shift, dedicated male and female time slots. ${BUSINESS_INFO.googleRating} Google rating (${BUSINESS_INFO.reviewCount} reviews). Call ${BUSINESS_INFO.phone}.`,
   keywords: [
-    "Platinum Gym",
-    "প্লাটিনাম জিম",
-    "Gym in Banasree",
-    "Gym in Dhaka",
-    "Female gym shift Dhaka",
-    "Air conditioned gym Banasree",
-    "Fitness center Banasree",
-    "Best gym in Rampura",
-    "Platinum Fitness Banasree",
+    BUSINESS_INFO.name,
+    BUSINESS_INFO.nameBangla,
+    `Gym in ${BUSINESS_INFO.area}`,
+    "Premier Gym",
+    "Female gym shift",
+    "Air conditioned gym",
+    "Modern fitness center",
+    "Best gym",
   ],
   openGraph: {
-    title: "Platinum Gym (প্লাটিনাম জিম) - Banasree, Dhaka",
+    title: `${BUSINESS_INFO.name} (${BUSINESS_INFO.nameBangla}) - ${BUSINESS_INFO.area}`,
     description:
-      "Premier 100% air-conditioned gym in Banasree, Dhaka. World-class equipment, certified trainers, and separate male and female shifts.",
-    url: "https://platinumgym.bd",
-    siteName: "Platinum Gym",
+      `Premier 100% air-conditioned gym in ${BUSINESS_INFO.area}. World-class equipment, certified trainers, and separate male and female shifts.`,
+    url: `https://${BUSINESS_INFO.website}`,
+    siteName: BUSINESS_INFO.name,
     images: [
       {
         url: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80",
         width: 1200,
         height: 630,
-        alt: "Platinum Gym Banasree Dhaka Floor",
+        alt: `${BUSINESS_INFO.name} Main Floor`,
       },
     ],
     locale: "en_US",
@@ -46,9 +46,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Platinum Gym (প্লাটিনাম জিম) - Banasree, Dhaka",
+    title: `${BUSINESS_INFO.name} (${BUSINESS_INFO.nameBangla}) - ${BUSINESS_INFO.area}`,
     description:
-      "Premier 100% air-conditioned gym in Banasree, Dhaka. 4.4 Google rating (173 reviews).",
+      `Premier 100% air-conditioned gym in ${BUSINESS_INFO.area}. ${BUSINESS_INFO.googleRating} Google rating (${BUSINESS_INFO.reviewCount} reviews).`,
     images: [
       "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80",
     ],

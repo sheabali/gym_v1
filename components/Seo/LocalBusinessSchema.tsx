@@ -5,11 +5,11 @@ export default function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HealthClub",
-    name: "Platinum Gym (প্লাটিনাম জিম)",
-    alternateName: ["Platinum Gym Banasree", "Platinum Fitness Dhaka"],
+    name: `${BUSINESS_INFO.name} (${BUSINESS_INFO.nameBangla})`,
+    alternateName: [BUSINESS_INFO.name, `${BUSINESS_INFO.name} ${BUSINESS_INFO.area}`],
     description:
-      "Premier 100% air-conditioned gym in Banasree, Dhaka with world-class equipment, certified trainers in every shift, and dedicated male & female slots.",
-    url: "https://platinumgym.bd",
+      `Premier 100% air-conditioned gym in ${BUSINESS_INFO.area} with world-class equipment, certified trainers in every shift, and dedicated male & female slots.`,
+    url: `https://${BUSINESS_INFO.website}`,
     telephone: BUSINESS_INFO.phoneTel,
     priceRange: "৳৳",
     image: [
@@ -18,10 +18,10 @@ export default function LocalBusinessSchema() {
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "House-16, Road-03, Block-D, Banasree",
-      addressLocality: "Dhaka",
-      postalCode: "1219",
-      addressRegion: "Dhaka Division",
+      streetAddress: BUSINESS_INFO.addressEn,
+      addressLocality: "Main City",
+      postalCode: "0000",
+      addressRegion: "Central Region",
       addressCountry: "BD",
     },
     geo: {

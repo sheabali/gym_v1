@@ -111,7 +111,7 @@ export default function RegistrationForm() {
               AUTH • NEW MEMBER ENROLLMENT
             </span>
             <span className="text-[#22c55e] font-bold text-[11px]">
-              BANASREE CAMPUS
+              MAIN CAMPUS
             </span>
           </div>
 

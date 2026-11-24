@@ -114,7 +114,7 @@ export default function AppSidebar({ role, ...props }: AppSidebarProps) {
         >
           <Image
             src={Logo.src}
-            alt="Platinum Gym Logo"
+            alt="Gym Logo"
             width={180}
             height={60}
             className="h-9 w-auto object-contain brightness-125"

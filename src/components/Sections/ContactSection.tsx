@@ -154,12 +154,12 @@ export default function ContactSection() {
           </div>
           <div className="max-w-md">
             <span className="text-xs text-[#22c55e] font-semibold block mb-1">
-              House-16, Road-03, Block-D, Banasree, Dhaka 1219
+              {BUSINESS_INFO.addressEn}
             </span>
             <p className="text-sm text-zinc-400 font-normal leading-relaxed">
               {language === "bn"
-                ? "সরাসরি চলে আসুন বনশ্রী ব্লক-ডি প্রধান জিম ভিজিট করতে, অথবা নিচের ফর্মটি পূরণ করে ফ্রি ট্রায়াল নিশ্চিত করুন।"
-                : "Drop by our Banasree Block-D flagship campus, or schedule your complimentary walkthrough and trial below."}
+                ? "সরাসরি চলে আসুন আমাদের প্রধান জিম ভিজিট করতে, অথবা নিচের ফর্মটি পূরণ করে ফ্রি ট্রায়াল নিশ্চিত করুন।"
+                : "Drop by our flagship campus, or schedule your complimentary walkthrough and trial below."}
             </p>
           </div>
         </div>
@@ -171,13 +171,13 @@ export default function ContactSection() {
             <div className="border border-white/[0.08] bg-[#0e0e12] p-6 sm:p-7 rounded-2xl space-y-5 shadow-xl">
               <div>
                 <span className="text-xs text-[#22c55e] font-semibold block mb-1">
-                  Main Campus • Banasree Block-D
+                  Main Campus • {BUSINESS_INFO.area}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                  House-16, Road-03, Block-D
+                  {BUSINESS_INFO.name}
                 </h3>
                 <p className="text-xs text-zinc-400 mt-1 leading-relaxed">
-                  Banasree, Rampura Thana, Dhaka 1219. Near Banasree Central Mosque.
+                  {BUSINESS_INFO.addressEn}
                 </p>
               </div>
 
@@ -185,13 +185,13 @@ export default function ContactSection() {
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/[0.06] text-xs">
                 <div>
                   <span className="text-[11px] text-zinc-500 font-medium block mb-0.5">Operating Hours</span>
-                  <span className="font-semibold text-white">Daily 07:00 AM – 10:30 PM</span>
+                  <span className="font-semibold text-white">{BUSINESS_INFO.openingHoursEn}</span>
                 </div>
                 <div>
                   <span className="text-[11px] text-zinc-500 font-medium block mb-0.5">Verified Rating</span>
                   <span className="font-bold text-[#22c55e] flex items-center gap-1">
                     <Star className="w-3.5 h-3.5 fill-[#22c55e]" />
-                    <span>4.4 (173 Reviews)</span>
+                    <span>{BUSINESS_INFO.googleRating} ({BUSINESS_INFO.reviewCount} Reviews)</span>
                   </span>
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function ContactSection() {
                 </a>
 
                 <a
-                  href={`https://wa.me/8801733521052?text=Hello%20Platinum%20Gym%2C%20I%20want%20to%20visit%20the%20gym%20in%20Banasree%20Block-D`}
+                  href={`${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(`Hello ${BUSINESS_INFO.name}, I want to visit the gym`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-2.5 px-3 bg-[#22c55e]/10 hover:bg-[#22c55e]/20 border border-[#22c55e]/30 text-[#22c55e] text-xs flex items-center justify-center gap-2 transition-colors font-semibold rounded-sm"
@@ -222,7 +222,7 @@ export default function ContactSection() {
             <div className="border border-white/[0.08] bg-[#0e0e12] overflow-hidden rounded-2xl shadow-xl">
               <div className="h-60 sm:h-64 w-full relative">
                 <iframe
-                  title="Platinum Gym Banasree Dhaka Map"
+                  title={`${BUSINESS_INFO.name} Map`}
                   src={BUSINESS_INFO.googleMapsEmbedUrl}
                   width="100%"
                   height="100%"
@@ -237,7 +237,7 @@ export default function ContactSection() {
               <div className="p-3.5 bg-[#121216] flex items-center justify-between text-xs border-t border-white/[0.08]">
                 <span className="flex items-center gap-2 text-zinc-300">
                   <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
-                  <span>QC6J+VP Banasree</span>
+                  <span>{BUSINESS_INFO.plusCode}</span>
                 </span>
                 <a
                   href={BUSINESS_INFO.googleMapsDirectionsUrl}
@@ -273,12 +273,12 @@ export default function ContactSection() {
                 </h4>
                 <p className="text-sm text-zinc-400 max-w-md mb-8 leading-relaxed">
                   {language === "bn"
-                    ? "প্লাটিনাম জিম বনশ্রী ব্লক-ডি নির্বাচন করার জন্য ধন্যবাদ। আমাদের ফ্রন্ট ডেস্ক ম্যানেজার আপনার নম্বরে দ্রুত কল করে সেশন নিশ্চিত করবেন।"
-                    : "Thank you for choosing Platinum Gym. Our Banasree front desk team will contact you shortly to confirm your entry."}
+                    ? `${BUSINESS_INFO.nameBangla} নির্বাচন করার জন্য ধন্যবাদ। আমাদের ফ্রন্ট ডেস্ক ম্যানেজার আপনার নম্বরে দ্রুত কল করে সেশন নিশ্চিত করবেন।`
+                    : `Thank you for choosing ${BUSINESS_INFO.name}. Our front desk team will contact you shortly to confirm your entry.`}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <a
-                    href="https://wa.me/8801733521052?text=Hello%20Platinum%20Gym%2C%20I%20just%20submitted%20my%20enrollment%20request"
+                    href={`${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(`Hello ${BUSINESS_INFO.name}, I just submitted my enrollment request`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-2.5 bg-[#22c55e] hover:bg-[#16a34a] !text-black text-xs font-bold transition-all flex items-center gap-2 rounded-sm shadow-md shadow-[#22c55e]/20"

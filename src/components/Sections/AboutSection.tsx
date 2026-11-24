@@ -16,7 +16,7 @@ export default function AboutSection() {
       titleEn: "Climate Architecture",
       titleBn: "সেন্ট্রাল তাপমাত্রা ও অক্সিজেন নিয়ন্ত্রণ",
       descEn:
-        "High-capacity inverter air conditioning maintains a crisp 20°C with continuous air exchange, ensuring high energy and zero stuffiness even during intense Dhaka summers.",
+        "High-capacity inverter air conditioning maintains a crisp 20°C with continuous air exchange, ensuring high energy and zero stuffiness even during intense summer heat.",
       descBn:
         "উন্নত ইনভার্টার এসি সিস্টেম সার্বক্ষণিক ২০ ডিগ্রি তাপমাত্রা ও সতেজ বাতাস নিশ্চিত করে, যা তীব্র গরমেও ক্লান্তিহীন ও স্বাস্থ্যকর ওয়ার্কআউট নিশ্চিত করে।",
     },
@@ -83,7 +83,7 @@ export default function AboutSection() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-[#22c55e] mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
-              <span>About Platinum Gym</span>
+              <span>About {BUSINESS_INFO.name}</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white uppercase">
               {language === "bn" ? "আমাদের মূল দর্শন" : "Engineered For Focus"}
@@ -104,7 +104,7 @@ export default function AboutSection() {
               <div className="aspect-[4/5] relative w-full overflow-hidden rounded-xl bg-zinc-900">
                 <Image
                   src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80"
-                  alt="Platinum Gym interior floor in Banasree Dhaka"
+                  alt={`${BUSINESS_INFO.name} interior floor`}
                   fill
                   className="object-cover contrast-105"
                   sizes="(max-width: 768px) 100vw, 500px"
@@ -112,7 +112,7 @@ export default function AboutSection() {
               </div>
 
               <div className="pt-3 pb-1 px-2 flex items-center justify-between text-xs text-zinc-400">
-                <span className="font-medium text-zinc-300">House-16, Road-03, Block-D</span>
+                <span className="font-medium text-zinc-300">{BUSINESS_INFO.area}</span>
                 <span className="text-[#22c55e] font-semibold">{BUSINESS_INFO.plusCode}</span>
               </div>
             </div>
@@ -166,12 +166,12 @@ export default function AboutSection() {
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
                 {language === "bn"
-                  ? "প্লাটিনাম জিম বনাম সাধারণ জিম"
-                  : "The Platinum Standard vs. Conventional Gyms"}
+                  ? `${BUSINESS_INFO.nameBangla} বনাম সাধারণ জিম`
+                  : `The ${BUSINESS_INFO.name} Standard vs. Conventional Gyms`}
               </h3>
             </div>
             <span className="text-xs text-zinc-400 font-medium">
-              Banasree Fitness Standards
+              Modern Fitness Standards
             </span>
           </div>
 
@@ -181,7 +181,7 @@ export default function AboutSection() {
                 <tr className="border-b border-white/[0.08] text-xs font-semibold text-zinc-400 uppercase tracking-wider">
                   <th className="py-3 px-4 font-normal">Feature</th>
                   <th className="py-3 px-4 font-bold text-[#22c55e] bg-white/[0.02] rounded-t-lg">
-                    Platinum Gym Banasree
+                    {BUSINESS_INFO.name}
                   </th>
                   <th className="py-3 px-4 font-normal text-zinc-500">
                     Typical Gyms

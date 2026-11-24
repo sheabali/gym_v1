@@ -28,8 +28,8 @@ export default function FaqSection() {
           : "What are the exact operating shift hours for Male, Female, and Combined slots?",
       answer:
         language === "bn"
-          ? "প্লাটিনাম জিম প্রতিদিন ৪টি সুনির্দিষ্ট আলাদা শিফটে পরিচালিত হয় যাতে ভিড় এড়ানো যায় এবং সর্বোচ্চ মনোযোগ ও পর্দা বজায় থাকে। সার্বক্ষণিক সেন্ট্রাল এসি চালু থাকে।"
-          : "Platinum Gym enforces 4 structured daily shifts to ensure zero floor crowding, focused workout atmosphere, and strict gender separation. 100% central inverter cooling operates continuously.",
+          ? `${BUSINESS_INFO.nameBangla} প্রতিদিন ৪টি সুনির্দিষ্ট আলাদা শিফটে পরিচালিত হয় যাতে ভিড় এড়ানো যায় এবং সর্বোচ্চ মনোযোগ ও পর্দা বজায় থাকে। সার্বক্ষণিক সেন্ট্রাল এসি চালু থাকে।`
+          : `${BUSINESS_INFO.name} enforces 4 structured daily shifts to ensure zero floor crowding, focused workout atmosphere, and strict gender separation. 100% central inverter cooling operates continuously.`,
       specs: [
         { label: language === "bn" ? "পুরুষ সকাল শিফট" : "Male Morning Shift", value: "07:00 AM – 11:30 AM" },
         { label: language === "bn" ? "নারী এক্সক্লুসিভ শিফট" : "Female Exclusive Shift", value: "12:00 PM – 04:30 PM (Private)" },
@@ -68,7 +68,7 @@ export default function FaqSection() {
           : "Is certified trainer form guidance included in general membership, or is personal training required?",
       answer:
         language === "bn"
-          ? "প্লাটিনাম জিমের প্রতিটি শিফটে সার্টিফাইড ফ্লোর ট্রেনার সার্বক্ষণিক নিয়োজিত থাকেন। তারা সকল সাধারণ সদস্যকে ওয়ার্কআউট রুটিন, সঠিক ফর্ম ও নিরাপত্তা নিশ্চিত করতে বিনামূল্যে গাইড করেন।"
+          ? `${BUSINESS_INFO.nameBangla}-এর প্রতিটি শিফটে সার্টিফাইড ফ্লোর ট্রেনার সার্বক্ষণিক নিয়োজিত থাকেন। তারা সকল সাধারণ সদস্যকে ওয়ার্কআউট রুটিন, সঠিক ফর্ম ও নিরাপত্তা নিশ্চিত করতে বিনামূল্যে গাইড করেন।`
           : "Every general membership includes on-floor certified trainer support. Floor instructors observe posture, calibrate machine settings, and provide beginner split plans without requiring a personal training contract.",
       specs: [
         { label: language === "bn" ? "ফ্লোর ট্রেনার উপস্থিতি" : "Floor Instructor", value: "Present Every Operational Shift" },
@@ -141,18 +141,18 @@ export default function FaqSection() {
       id: "proto-7",
       category: "admission",
       categoryLabel: language === "bn" ? "লোকেশন ও ক্যাম্পাস" : "Campus & Parking",
-      badge: "Banasree Block-D",
+      badge: BUSINESS_INFO.area,
       question:
         language === "bn"
-          ? "বনশ্রীতে জিমের সঠিক অবস্থান কোথায় এবং পার্কিংয়ের কী ব্যবস্থা রয়েছে?"
-          : "Where is Platinum Gym located in Banasree, and is dedicated vehicle parking available?",
+          ? "জিমের সঠিক অবস্থান কোথায় এবং পার্কিংয়ের কী ব্যবস্থা রয়েছে?"
+          : `Where is ${BUSINESS_INFO.name} located, and is dedicated vehicle parking available?`,
       answer:
         language === "bn"
-          ? "বাড়ি-১৬, রোড-০৩, ব্লক-ডি, বনশ্রী, ঢাকা ১২১৯ (গুগল প্লাস কোড: QC6J+VP Dhaka)। বনশ্রী মেইন রোড থেকে মাত্র ১৫০ মিটার ভেতরে। ভবনের গ্রাউন্ড ফ্লোরে সদস্যদের মোটরসাইকেল ও সাইকেলের জন্য ২৪ ঘণ্টা সিকিউরিটি গার্ড নিয়ন্ত্রিত সুরক্ষিত পার্কিং রয়েছে।"
-          : "House-16, Road-03, Block-D, Banasree, Dhaka 1219 (Plus Code: QC6J+VP Dhaka). Situated 150m from Banasree Main Road. The building includes covered ground-floor parking for member motorcycles and bicycles with 24/7 security.",
+          ? `${BUSINESS_INFO.addressBn}। মেইন রোড থেকে মাত্র ১৫০ মিটার ভেতরে। ভবনের গ্রাউন্ড ফ্লোরে সদস্যদের মোটরসাইকেল ও সাইকেলের জন্য ২৪ ঘণ্টা সিকিউরিটি গার্ড নিয়ন্ত্রিত সুরক্ষিত পার্কিং রয়েছে।`
+          : `${BUSINESS_INFO.addressEn}. Situated just 150m from the Main Road. The building includes covered ground-floor parking for member motorcycles and bicycles with 24/7 security.`,
       specs: [
         { label: language === "bn" ? "মেইন রোড থেকে দূরত্ব" : "From Main Road", value: "150m (2 Min Walk)" },
-        { label: language === "bn" ? "রামপুরা ব্রিজ থেকে" : "From Rampura Bridge", value: "1.2 KM (5 Min Rickshaw)" },
+        { label: language === "bn" ? "যাতায়াত সুবিধা" : "Accessibility", value: "Easy Public & Private Access" },
         { label: language === "bn" ? "পার্কিং সুবিধা" : "Parking Facility", value: "Dedicated Ground Floor Bike Bay" },
         { label: language === "bn" ? "ভবন নিরাপত্তা" : "Premises Security", value: "24/7 Security Personnel on Duty" },
       ],
@@ -317,7 +317,7 @@ export default function FaqSection() {
               Have More Questions Before Joining?
             </h4>
             <p className="text-xs text-zinc-400 mt-1">
-              Call our front desk at {BUSINESS_INFO.phone} or drop by House-16, Road-03, Block-D, Banasree.
+              Call our front desk at {BUSINESS_INFO.phone} or drop by {BUSINESS_INFO.addressEn}.
             </p>
           </div>
 

@@ -89,7 +89,7 @@ const LoginPage = () => {
           <div className="relative w-full h-full min-h-[440px] lg:min-h-[560px] overflow-hidden rounded-xs bg-zinc-900">
             <Image
               src="/images/lip.jpg"
-              alt="Platinum Gym Banasree"
+              alt="Fitness Center"
               fill
               className="object-cover contrast-110 grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
               priority
@@ -99,10 +99,10 @@ const LoginPage = () => {
             
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono text-zinc-300">
               <span className="mono-label text-[11px] text-white font-bold">
-                PLATINUM GYM • BANASREE
+                APEX FITNESS • MEMBER ACCESS
               </span>
               <span className="text-[#22c55e] font-mono font-bold text-[11px]">
-                EST. 2015
+                EST. 2018
               </span>
             </div>
           </div>
